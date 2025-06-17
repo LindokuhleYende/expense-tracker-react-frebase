@@ -4,7 +4,7 @@ import useAddTransaction from "../../hooks/useAddTransaction";
 import useGetTransactions from "../../hooks/useGetTransactions";
 import useGetUserInfo from "../../hooks/useGetUserInfo";
 import { useNavigate } from "react-router";
-import { auth, db, user } from "../../config/firebase-config";
+import { auth, db } from "../../config/firebase-config";
 import { Button } from "react-bootstrap"
 import "./expense.css"
 import { doc, updateDoc, serverTimestamp } from "firebase/firestore";
