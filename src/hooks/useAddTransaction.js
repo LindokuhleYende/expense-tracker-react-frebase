@@ -10,6 +10,9 @@ function useAddTransaction() {
         transactionAmount,
         transactionType,
     }) => {
+        if (!userID) {
+            throw new Error("User ID is missing. Please log in again.");
+        }
         await addDoc(transactionCollectionRef, {
             userID,
             description,

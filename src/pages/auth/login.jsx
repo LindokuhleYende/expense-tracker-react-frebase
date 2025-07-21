@@ -11,7 +11,18 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      // Save user info in localStorage for useGetUserInfo
+      localStorage.setItem(
+        "auth",
+        JSON.stringify({
+          name: user.displayName || user.email,
+          profilePhoto: user.photoURL || "",
+          userID: user.uid,
+          isAuth: true,
+        })
+      );
       console.log("User logged in Successfully");
       window.location.href = "/expense-tracker";
       toast.success("User logged in Successfully", {
