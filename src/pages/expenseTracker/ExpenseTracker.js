@@ -9,7 +9,7 @@ import { Button } from "react-bootstrap"
 import "./expense.css"
 import { doc, updateDoc, serverTimestamp } from "firebase/firestore";
 import useDeleteTransaction from "../../hooks/useDeleteTransaction";
-
+import IncomeExpensePieChart from "./IncomeExpensePieChart";
 function ExpenseTracker() {
     const { addTransaction } = useAddTransaction();
     const { transactions, transactionTotals } = useGetTransactions();
@@ -150,6 +150,7 @@ function ExpenseTracker() {
                 </div>
 
             </div>
+            <IncomeExpensePieChart income={income} expense={expenses} />
             <div className="transaction-section">
                 <h3> Transactions</h3>
                 <ul>
