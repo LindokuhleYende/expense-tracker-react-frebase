@@ -116,3 +116,12 @@ h1 {
     border-radius: 50%;
     object-fit: cover;
     display: inline-block; }
+
+.chart-section {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    height: 300px;
+}

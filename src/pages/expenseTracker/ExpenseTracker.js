@@ -148,9 +148,11 @@ function ExpenseTracker() {
                         <Button variant="outline-success" type="submit"> Add Transaction</Button>
                     </form>
                 </div>
+                <div className="chart-section">
+                    <IncomeExpensePieChart income={income} expense={expenses} />
+                </div>
 
             </div>
-            <IncomeExpensePieChart income={income} expense={expenses} />
             <div className="transaction-section">
                 <h3> Transactions</h3>
                 <ul>
@@ -161,7 +163,7 @@ function ExpenseTracker() {
                             <li key={id}>
                                 <h4> {description} </h4>
                                 <p>
-                                    R{transactionAmount} •{" "}
+                                    R{transactionAmount} •{ }
                                     <label
                                         style={{
                                             color: transactionType === "expense" ? "red" : "green",
